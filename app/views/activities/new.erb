@@ -1,0 +1,55 @@
+  <h1  id="commentcreate"> Share your Activity </h1>
+    <!-- form for creating a activity starts here -->
+<% form_for @activity, :url => {:controller=>"activities", :action=>"create"}  do |f| %>
+  <div class="formdiv">
+    <div class="space">
+      <!-- label for username -->
+        <div class="field">user name<span style="color:red;"> *</span>: </div>
+        <div class="input">
+          <!--text field for storing the username-->
+          <%=f.text_field :user_name  %>
+          <span style="color:red;"> <%=f.error_message_on :user_name %></span>
+        </div>
+    </div>
+    <div class="space">
+      <!-- label for activity name-->
+        <div class="field">Activity name<span style="color:red;"> *</span>:</div>
+        <div class="input">
+          <!--text field for storing the activityname-->
+          <%=text_field_with_auto_complete :activity, :activity_name %>
+          <span style="color:red;">  <%=f.error_message_on :activity_name  %></span>
+        </div>
+    </div>
+    <div class="space">
+      <!-- label for activity description -->
+        <div class="field">Description <span style="color:red;"> *</span>:</div>
+        <div class="postinput" >
+          <!--displaying text area for the comment description-->
+          <%= fckeditor_textarea(:activity, :activity_desc, :toolbarSet => 'Simple',:width => '700px;', :height => '300px')  %>
+          <span style="color:red;">  <%= f.error_message_on :activity_desc  %></span>
+        </div>
+    </div>
+    <div class="spacetag">
+      <!-- label for Tag -->
+        <div class="field">Tag :</div>
+        <div class="input">
+          <!--displaying text field for the comment description-->
+          <%=f.text_field :tag_list %>
+        </div>
+    </div>
+      <div class="postbutton">
+        <!--Creating a sumit button for posting a activity -->
+        <input type="submit" value="" class="post3">
+      </div>
+      <div class="cancel">
+        <!--Creating a link for cancel-->
+        
+        <%= link_to image_tag("/images/cancel.png"),{:controller=>"activities",:action=>"home"}%></div>
+      </div>
+  </div>
+  <!-- end of the form -->
+<% end %>
+
+
+
+

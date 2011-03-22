@@ -1,0 +1,12 @@
+
+<div class="result">
+<h2 class="clear">Activities Related To This Tag are:</h2>
+  <% @activities.each do |a| %> <!-- displaying all the activities related to particular tag-->
+      <div class="space">
+          <div class ="field">Activity name</div>
+          <div class ="input" >&nbsp;&nbsp;<%= a.activity_name %></div>
+      </div>
+    <%end %><!--loop ends here -->
+</div>
+
+

@@ -1,0 +1,15 @@
+   
+
+
+<%= observe_field 'query',  :frequency => 2,
+  :update => 'table',
+  :before => "Element.show('spinner')",
+  :success => "Element.hide('spinner')",
+  :url => {:action => 'home'},
+  :with => 'query' %>
+
+<div id="table">
+  <%= render :partial => "activities_list" %> <!-- calling the partial post_list -->
+</div>
+
+

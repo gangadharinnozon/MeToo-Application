@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+
+    <%= javascript_include_tag :defaults %>
+    <%= javascript_include_tag :fckeditor %>
+    <%= stylesheet_link_tag "userstyles" %>    
+      <%= javascript_include_tag :all %>
+    
+    <script type="text/javascript">
+      //<![CDATA[
+      new Form.Element.Observer('query', 2, function(element, value) {Element.show('spinner'); new Ajax.Updater('table', '/posts/home', {asynchronous:true, evalScripts:true, onSuccess:function(request){Element.hide('spinner')}, parameters:'query=' + value})})
+      //]]>
+     
+    </script>
+   
+
+
+  </head>
+  <body>
+
+        
+    <div class="post"><%= link_to image_tag("/images/home.png"),{:controller=>"activities",:action=>"home"}%></div> 
+     <div class="post">  <%=link_to image_tag("/images/share1.png",:style => "width:69px;height:30px;"),{:controller=>:activities,:action=>"new"}%></div>
+    
+     <div >
+        
+          <%- flash.each do |flash_type, message| -%>
+            <%= content_tag :div, message, :class => "flash", :id => flash_type %>
+            <% content_tag :script, :type => "text/javascript" do %>
+                setTimeout("new Effect.Fade('<%= flash_type %>');", 2000);
+            <% end %>
+            <%- end -%>               
+        
+     </div>
+     
+    <div id="content">
+      <%= yield %>
+    </div>
+  </body>
+
+</html>	

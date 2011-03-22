@@ -1,0 +1,39 @@
+<!--for displaying heading for comments create page-->
+<h1 id="commentcreate"> post a comment: </h1>
+<!-- form for creating a comment starts here -->
+<% form_for @comment, :url => {:controller=>"comments", :action=>"create",:id=>@activity.id } do |f| %>
+  <div class="formdiv">
+    <div class="space">
+      <div class="field">Description : </div>
+      <div class="activity_desc1">
+        <%= @activity.activity_desc %>
+      </div>
+    </div>
+    <div class="space">
+      <div class="field">user name<span style="color:red;"> *</span>: </div>
+      <div class="input">
+        <!--displaying  text field for storing the username-->
+        <%=f.text_field :username  %>
+        <span style="color:red;"> <%=f.error_message_on :username %> </span>
+      </div>
+    </div>
+    <div class="space">
+      <div class="field">comment<span style="color:red;">   *</span>:</div>
+      <!--displaying  text area for the comment description-->
+      <div class="postinput">
+        <%= fckeditor_textarea(:comment, :comment, :toolbarSet => 'Simple',:width => '700px;', :height => '300px')  %>
+        <span style="color:red"> <%= f.error_message_on :comment %> </span> </div>
+    </div>
+    <div class="spacetag">
+      <div class="commentbutton">
+        <!--Creating a sumit button  for creating comment-->
+         <input type="submit" value="" class="comment">
+      </div>
+      <div class="cancel">
+        <!--Creating a link for cancel-->
+      <%= link_to image_tag("/images/cancel.png"),{:controller=>"activities",:action=>"home"}%> </div>
+    </div>
+  </div>
+  <!-- form ends here -->
+<% end %>
+

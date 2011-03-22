@@ -1,0 +1,57 @@
+
+<div class="result">
+  <h2 class="clear">Activity details are:</h2>
+  <div class="space">
+      <!-- label for activity name -->
+      <div class ="field">Activity name:</div>
+      <!-- displaying the value for activity name -->
+      <div class ="input">&nbsp;&nbsp;<%= @activity.activity_name %></div>
+  </div>
+  <div class="space" >
+      <!-- label for activity description -->
+      <div class ="field" >Activity desciption:</div>
+      <!-- displaying the value for activity name -->
+      <div class ="post_desc">&nbsp;&nbsp;<%= @activity.activity_desc %></div>
+  </div>
+  
+  <div class="space" >
+      <!-- label for created on -->
+      <div class ="field" >Created on:</div>
+      <!-- displaying the value for created on -->
+      <div  class="input">&nbsp;&nbsp;<%=@activity.created_at.strftime("%d %b %Y")%></div>
+  </div>
+  <div class="space" >
+      <!-- label for user who created the activity -->
+      <div class ="field" >Created by:</div>
+      <!-- displaying the value for who created the activity -->
+      <div  class="input">&nbsp;&nbsp;<%=@activity.user_name%></div>
+  </div>
+  <% comments = find_comments(@activity) %>
+
+  <%if comments.blank?%>
+    <div class="space" >
+        <div class="input"><%= "There are no comments for this activity"%></div>
+        <div class ="input"><%=link_to "comment",:controller=>"comments",:action=>"new",:id=>@activity.id%>
+      </div>
+    <%else%>
+      <h2 class="clear"> comments for This Activity are: </b></h2>
+     
+      <% comments.each do |c| %>
+        <div class="space1" >           
+          <!-- displaying the value for comment -->
+          <div class ="post_desc2">&nbsp;&nbsp;<%= c.comment %></div>
+            <!-- displaying the value for when the activity is created -->
+            <div  class ="input">&nbsp;&nbsp;<%= time_ago_in_words(c.try(:created_at)) %> ago</div>
+
+        </div>
+        <div class="space" >
+            <!-- displaying the value for who created the comment -->
+            <div class="input">&nbsp;&nbsp;<%= c.username %></div>
+        </div>
+        
+      <% end %>
+    <%end%>
+
+  </div>
+
+

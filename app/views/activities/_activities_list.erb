@@ -1,0 +1,58 @@
+<h1 class="center">Welcome To The MeToo Site</h1>
+<!-- checking whether the total number of activity are zero or not -->
+<% if @total == 0 %>
+       <div class="noposts">No Activities found...</div>
+<% else %>
+       
+  
+  <div class="result">
+    <h2 class="clear">Activities  are:</h2>
+       <!-- displaying all the activitys using .each loop-->
+    <% @activities.each do |a| %>
+      <div class="space1">
+          <div class ="field">Activity Name:</div>             
+          <div class ="input1">&nbsp;&nbsp;<%=link_to  a.activity_name ,:controller=>"activities",:action=>"show",:id=>a.id%></div>
+           <div class="input"> <%= link_to image_tag("/images/metoo.png"),{:action=>"like",:id=>a.id} %></div>
+      </div>
+      <div class="space" >
+          <div class ="field" >Activity desciption:</div>
+          <!-- displaying  activity description -->
+          <div class ="post_desc2">&nbsp;&nbsp;<%= a.activity_desc %></div>
+          <div class ="input"><%=link_to image_tag("/images/comment.png"),:controller=>"comments",:action=>"new",:id=>a.id%> </div>
+      </div>     
+         <div class="space">
+              <div class ="field">Tag:</div>
+                 <!-- displaying  activity title -->
+                 <%if a.tag_list.blank?%>
+                <div class ="input"><%="No tags"%></div>
+              <%else%>
+                   <div class ="input"><%=link_to a.tag_list,{:action=>:show_tag_activities,:id=>a.tag_list}%></div>
+              <%end%><!-- if ends here -->
+         </div>
+       <div class="space" >
+          <!-- label for like -->
+          <div class ="field" >Liked:</div>
+          <!-- displaying the value for  like -->
+          <div class ="input">&nbsp;&nbsp;<%= a.like %></div>
+      </div>
+       <% comments = find_comments(a) %>
+        <div class="space" >
+          <!-- label for number of comments -->
+          <div class ="field" >Comments:</div>
+          <!-- displaying the value for number of comments -->
+          <div  class="input">&nbsp;&nbsp;<%=comments.size%></div>
+      </div>
+         
+     <% end %><!-- loop ends here -->
+      <div class="page">
+      <% if @activities_pages.page_count > 1 %>
+                      Page&nbsp;:
+          <!-- displaying the page links usin classsing_paginate plugin with ajax -->
+        <%= pagination_links_full @activities_pages %>
+      <% end %>
+  </div>
+  </div>
+    
+  
+
+<% end %><!-- if ends here -->

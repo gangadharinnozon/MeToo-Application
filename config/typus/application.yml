@@ -1,0 +1,79 @@
+###
+## Typus Configuration File
+##
+#
+# Post:
+#   fields:
+#     list: id, title, category_id, created_at, status
+#     form: title, body, status, created_at
+#     relationship: title, status
+#     options:
+#       selectors:
+#       read_only:
+#       auto_generated:
+#       questions:
+#       date_formats:
+#         created_at: post_long
+#   actions:
+#     index: cleanup
+#     edit: send_as_newsletter
+#     show: rebuild
+#   order_by: created_at
+#   relationships:
+#   filters: status, created_at, category_id
+#   search: title, body
+#   application: Application
+#   description: Some text to describe the model
+#   options:
+#     edit_after_create: false
+#     end_year: 2015
+#     form_rows: 25
+#     icon_on_boolean: true
+#     minute_step: 15
+#     nil: 'nil'
+#     per_page: 5
+#     sidebar_selector: 5
+#     start_year: 1990
+#     toggle: true
+#
+###
+
+Activity:
+  fields:
+    list: id, user_name, activity_name, like, cached_tag_list, created_at, updated_at
+    form: user_name, activity_name, activity_desc, like, cached_tag_list, created_at, updated_at
+    relationship:
+    options:
+      selectors:
+      read_only:
+      auto_generated:
+      questions:
+  actions:
+    index:
+    edit:
+  order_by:
+  relationships: base_tags, comments, tag_taggings, taggings, tags
+  filters:
+  search:
+  application: MeTooexample  with backup
+  description:
+
+Comment:
+  fields:
+    list: id, activity_id, username, created_at, updated_at
+    form: comment, activity_id, username, created_at, updated_at
+    relationship:
+    options:
+      selectors:
+      read_only:
+      auto_generated:
+      questions:
+  actions:
+    index:
+    edit:
+  order_by:
+  relationships: activity
+  filters:
+  search:
+  application: MeTooexample  with backup
+  description:

@@ -1,0 +1,261 @@
+/* 
+    Document   : userstyles
+    Created on : Mar 7, 2011, 12:01:29 PM
+    Author     : Innozon D08
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+root { 
+    display: block;
+}
+body
+{
+  
+  background :url(/images/bg2.png) repeat-x top;  
+  background-color:#E2E0DC;
+
+}
+.post3{
+ background:url(/images/post.png) no-repeat;
+ width:73px;
+ height:27px;
+ padding:0;
+ margin:0;
+ float:left;
+ cursor:pointer;
+ border:none;
+ }
+ .meeto{
+ background:url(/images/metoo.png) no-repeat;
+ width:73px;
+ height:27px;
+ padding:0;
+ margin:0;
+ float:left;
+ cursor:pointer;
+ border:none;
+ }
+ 
+ img{
+     border:none;
+ }
+#create
+{
+
+	 float:left;
+	 margin-left:20%;
+	 color:	#800517;
+}
+#commentcreate
+{
+	float:left;
+	margin-left:400px;
+	color:#827839;
+	height:45px;
+	font-weight:bold;
+        clear:both;
+}
+.comment
+{
+    background:url(/images/comment.png) no-repeat;
+ width:116px;
+ height:27px;
+ padding:0;
+ margin:0;
+ float:left;
+ cursor:pointer;
+ border:none;
+}
+.space
+{
+	 clear:both;
+	height:50px;
+	
+}
+.space1
+{
+	 clear:both;
+	height:50px;
+	
+        margin-top:60px;
+}
+
+.spacetag
+{
+	 clear:both;
+	height:50px;
+	width:600px;
+	margin-top:27%;
+}
+
+.field
+{
+	float:left;
+	width:140px;
+	color:#800517;
+	height:45px;
+	font-weight:bold;
+}
+.field1
+{
+	float:left;
+	width:140px;
+	color:#800517;
+	height:45px;
+	font-weight:bold;
+        padding-left:30px;
+}
+
+.input
+{
+	  float:left; 
+	  padding-left:20px;
+	  height:45px;
+}
+.input1
+{
+	  float:left;
+	  padding-left:20px;
+	  height:45px;
+          width:300px;
+}
+
+.fckeditor
+{
+        float:left;
+    padding-left:20px;
+    width : '100%';
+    height : '150px';
+
+}
+.postinput
+{
+	float:left;
+	width:400px;
+	padding-left:20px;
+	height:45px;  
+}
+.clear
+{
+  clear:both;
+ color:#827839;
+
+}
+.green
+{
+    color:#348017;
+}
+
+.center
+{
+    clear:both;
+     color:#348017;
+    padding-left:35%;
+	margin-top:30px;
+}
+.post_desc
+{
+	  float:left; 
+	  padding-left:20px;
+	  height:45px;
+	  margin-top:-35px;
+}
+.post_desc1
+{
+	  float:left;
+	  padding-left:20px;
+	  height:45px;
+	  margin-top:-15px;
+}
+.post_desc2
+{
+           float:left;
+	  padding-left:20px;
+	  height:45px;
+	  margin-top:-35px;
+          width:300px;
+}
+
+.result
+{
+ clear:both;
+margin-left:125px;
+padding-top:60px;
+
+}
+.result1
+{
+ clear:both;
+margin-left:125px;
+margin-top:60px;
+height:200px;
+
+}
+
+.page
+{
+    margin-left:50%;
+    color:#800517;
+    font-weight:bolder;
+
+}
+
+.formdiv
+{
+	
+   font-family:Arial;
+   margin-left:20%;
+}
+
+.flash
+{
+    margin-left:25%;
+    color:#0A4F7A;
+    font-weight:bolder;
+    font-size:20px;    
+    text-align:center;
+    border : 1px solid #B65600;
+    clear:both;
+}
+.post
+{
+    padding-left:5%;
+	font-weight:bold;
+	float:left;
+}
+.post1
+{
+    padding-left:40%;
+    color:#827839;
+    
+
+}
+.postbutton
+{
+  float:left;
+  padding-left:15%;
+}
+.cancel
+{
+  float:left;
+  padding-left:10%;
+}
+.commentbutton
+{
+  float:left;
+  padding-left:30%;
+}
+.noposts
+{
+ clear:both;
+ color:#827839;
+ margin-left:42%;
+ margin-top:50px;
+ font-weight:bold;
+ font-size:26px;
+}
